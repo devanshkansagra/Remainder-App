@@ -16,7 +16,7 @@ export class ExecuteViewSubmitHandler {
         private readonly persis: IPersistence,
     ) {}
     public async run(context: UIKitViewSubmitInteractionContext) {
-        const { view , user} = context.getInteractionData();
+        const { view, user } = context.getInteractionData();
         const {
             block_remaind_at,
             block_remainder_message,
@@ -30,7 +30,7 @@ export class ExecuteViewSubmitHandler {
         let title = block_remainder_title.action_remainder_title;
         let message = block_remainder_message.action_remainder_message;
         this.scheduleRemainder(user, time, title, message);
-        this.context.getInteractionResponder().successResponse().success
+        this.context.getInteractionResponder().successResponse().success;
     }
 
     public async scheduleRemainder(
@@ -48,7 +48,13 @@ export class ExecuteViewSubmitHandler {
 
         if (difference > 0) {
             setTimeout(() => {
-                console.log("New Remainder: \n Title: " + title + "\n" + "Description: "+description);
+                console.log(
+                    "New Remainder: \n Title: " +
+                        title +
+                        "\n" +
+                        "Description: " +
+                        description,
+                );
             }, difference);
         } else {
             console.log("Past time");
