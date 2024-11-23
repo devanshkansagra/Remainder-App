@@ -16,6 +16,6 @@ export class RemainderApp extends App {
         configuration: IConfigurationExtend,
         environmentRead: IEnvironmentRead,
     ): Promise<void> {
-        configuration.slashCommands.provideSlashCommand(new RemindCommand());
+        configuration.slashCommands.provideSlashCommand(new RemindCommand(this));
     }
 }

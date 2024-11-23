@@ -7,13 +7,18 @@ import {
     ISlashCommand,
     SlashCommandContext,
 } from "@rocket.chat/apps-engine/definition/slashcommands";
+import { createRemainder } from "../modals/createRemainder";
+import { RemainderApp } from "../../RemainderApp";
 
 export class RemindCommand implements ISlashCommand {
     public command = "remainder";
     public i18nParamsExample = "";
     public i18nDescription = "";
     public providesPreview = false;
-
+    public id: string = "";
+    constructor(app: RemainderApp) {
+        this.id = app.getID();
+    }
     public async executor(
         context: SlashCommandContext,
         read: IRead,
@@ -24,7 +29,9 @@ export class RemindCommand implements ISlashCommand {
 
         switch (parameters) {
             case "set": {
-                await this.sendMessage(context, modify, "set command");
+                new createRemainder(modify, context).createRemainderModal(
+                    this.id,
+                );
                 break;
             }
             case "list": {
