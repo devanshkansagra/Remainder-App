@@ -12,6 +12,11 @@
         "@rocket.chat/icons": "^0.39.0",
         "@rocket.chat/ui-kit": "^0.37.0",
         "glob": "^11.0.0",
-        "lru-cache": "^11.0.2"
+        "lru-cache": "^11.0.2",
+        "prettier": "^3.3.3"
+    },
+    "scripts": {
+        "format:check": "prettier --check 'src/**/*.ts'",
+        "lint": "tslint -p tsconfig.json"
     }
 }
