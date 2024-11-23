@@ -20,6 +20,7 @@ export class createRemainder {
         id: string,
     ): Promise<IUIKitSurfaceViewParam> {
         const modal: IUIKitSurfaceViewParam = {
+            id: "set",
             type: UIKitSurfaceType.MODAL,
             title: {
                 text: "Create Remainder",
@@ -43,6 +44,24 @@ export class createRemainder {
                     type: "input",
                     label: {
                         type: "plain_text",
+                        text: "Remainder title",
+                    },
+                    element: {
+                        type: "plain_text_input",
+                        appId: id,
+                        actionId: "action_remainder_title",
+                        blockId: "block_remainder_title",
+                        placeholder: {
+                            type: "plain_text",
+                            text: "Message",
+                        },
+                        multiline: false,
+                    },
+                },
+                {
+                    type: "input",
+                    label: {
+                        type: "plain_text",
                         text: "Remainder Message",
                     },
                     element: {
@@ -54,7 +73,7 @@ export class createRemainder {
                             type: "plain_text",
                             text: "Message",
                         },
-                        multiline: false,
+                        multiline: true,
                     },
                 },
             ],
