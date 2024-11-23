@@ -1,0 +1,15 @@
+{
+    "id": "1134b497-b097-4e32-8df3-f73492452937",
+    "version": "0.0.1",
+    "requiredApiVersion": "^1.4.0",
+    "iconFile": "icon.png",
+    "author": {
+        "name": "Devansh Kansagra",
+        "homepage": "https://github.com/devanshkansagra",
+        "support": "https://github.com/devanshkansagra/Remainder-App"
+    },
+    "name": "Remainder-App",
+    "nameSlug": "remainder",
+    "classFile": "RemainderApp.ts",
+    "description": "Creates Remainder in RocketChat"
+}
